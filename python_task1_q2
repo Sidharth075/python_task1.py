@@ -1,0 +1,46 @@
+import os
+n=int(input("enter the number of students"))
+students=[]
+print('''THE SUBJECT LIST IS MATHS,PHY,CHEM,CS,HISTORY & ECO''')
+print('enter the subject name in small letters')
+i=1
+for i in range(n):
+     sub=[]
+     print("enter the subject list for student NO.",i)
+     j=1
+     for j in range (6):
+          s_name=input('enter the subject')
+          sub.append(s_name)
+          b=input("if this students list is complete enter Y otherwise N")
+          if b=="Y":
+               break
+          s_name=""
+     students.append(sub)
+     sub=[]
+def numbers():
+     m=0
+     p=0
+     ch=0
+     h=0
+     e=0
+     for mem in students:
+          if mem=="maths":
+               m+=1
+          if mem=="phy":
+               p+=1
+          if mem=="chem":
+               ch+=1
+          if mem=="cs":
+               c+=1
+          if mem=="history":
+               h+=1
+          if mem=="eco":
+               e+=1
+     num={"maths":m,"phy":p,"chem":ch,"cs":c,"history":h,"eco":e}
+     return(num)
+def popular_subject():
+     pop=numbers()
+     popular=max(pop,key=pop.get)
+     print('the popular subject is',end="")
+     print(popular)
+popular_subject()
